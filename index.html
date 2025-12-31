@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RNG Website Teleporter</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #111, #000);
+      font-family: 'Arial Black', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: #111;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255,0,0,0.4);
+      max-width: 420px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #ff3333;
+    }
+
+    p {
+      opacity: 0.85;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 18px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff0000, #ff5c5c);
+      color: white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 8px 0 #a80000;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #a80000;
+    }
+
+    button:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #a80000;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎲 RNG WEBSITE GAME</h1>
+    <p>Click the button and get teleported to a random popular website.</p>
+
+    <button onclick="rollRNG()">ROLL RNG</button>
+
+    <div class="note">Hosted on GitHub Pages</div>
+  </div>
+
+  <script>
+    const websites = [
+      "https://www.google.com",
+      "https://www.youtube.com",
+      "https://www.wikipedia.org",
+      "https://www.roblox.com",
+      "https://www.github.com",
+      "https://www.reddit.com",
+      "https://www.twitter.com",
+      "https://www.instagram.com",
+      "https://www.netflix.com",
+      "https://www.amazon.com"
+    ];
+
+    function rollRNG() {
+      const randomIndex = Math.floor(Math.random() * websites.length);
+      const chosenSite = websites[randomIndex];
+
+      // Small delay for "game" feel
+      setTimeout(() => {
+        window.location.href = chosenSite;
+      }, 500);
+    }
+  </script>
+</body>
+</html>
